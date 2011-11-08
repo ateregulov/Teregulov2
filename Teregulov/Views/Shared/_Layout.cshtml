@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+@Html.Partial("_head")
+<body>
+    <div id="wrapper">
+        @Html.Partial("_header")
+        <div id="page">
+            <div id="page-bgtop">
+                <div id="page-bgbtm">
+                    <div id="content">
+                        @RenderBody()
+                        @Html.Partial("_comments")
+                    </div>
+                    <!-- end #content -->
+                    @Html.Partial("_sidebar")
+                    <div style="clear: both;">
+                        &nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <!-- end #page -->
+    </div>
+    @Html.Partial("_footer")
+</body>
+</html>

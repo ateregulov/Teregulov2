@@ -1,0 +1,23 @@
+﻿<div id="header-wrapper">
+    <div id="header">
+        <div id="logo">
+            <a href="#">
+                <img alt="Логотип" src="../../Content/Images/logo_a.gif" /></a>
+        </div>
+        <div id="headText">
+            <h1>
+                Программирование как бизнес
+            </h1>
+            <p>
+                Блог
+            </p>
+        </div>
+        <div id="menu">
+            <ul>
+                <li @Html.Raw(ViewBag.CurrentPage == "Blog" ? "class=\"current_page_item\"" : null)>@Html.ActionLink("Блог", "Index", "Blog")</li>
+                <li @Html.Raw(ViewBag.CurrentPage == "Tribune" ? "class=\"current_page_item\"" : null)>@Html.ActionLink("Трибуна", "Index", "Tribune")</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- end #header -->

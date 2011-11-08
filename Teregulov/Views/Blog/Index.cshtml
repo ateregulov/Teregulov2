@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Teregulov.Models.Post>
+@{
+    ViewBag.Title = "Index";
+    ViewBag.HtmlDescription = "описание страницы";
+    ViewBag.HtmlKeywords = "ключевые слова";
+    bool IsPreviousLinkVisible = ViewBag.IsPreviousLinkVisible ?? false;
+    ViewBag.CurrentPage = "Blog";
+}
+
+@foreach (var item in Model)
+{
+    <div class="post">
+        <h2 class="title">
+            <a href="№@*@Html.DisplayFor(modelItem => item.FriendlyUrl)*@">@Html.DisplayFor(modelItem => item.Title)</a>
+        </h2>
+        <p class="meta">
+            <span class="date">Date: @Html.DisplayFor(modelItem => item.CreateDate)</span>
+            @*<span class="posted">Posted by <a href="#">Someone</a></span>*@
+        </p>
+        <div style="clear: both;">
+            &nbsp;</div>
+        <div class="entry">
+            @Html.Raw(item.Text)
+            @*<p class="links">
+                <a href="@Html.DisplayFor(modelItem => item.FriendlyUrl)">Read More</a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="@Html.DisplayFor(modelItem => item.FriendlyUrl)"
+                title="b0x w">Comments</a></p>
+            *@
+        </div>
+    </div>
+    <hr />
+}

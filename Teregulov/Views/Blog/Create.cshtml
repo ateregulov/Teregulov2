@@ -1,0 +1,89 @@
+﻿@model Teregulov.Models.Post
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Post</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HtmlDesription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HtmlDesription)
+            @Html.ValidationMessageFor(model => model.HtmlDesription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HtmlKeywords)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HtmlKeywords)
+            @Html.ValidationMessageFor(model => model.HtmlKeywords)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FriendlyUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FriendlyUrl)
+            @Html.ValidationMessageFor(model => model.FriendlyUrl)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Text)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Text)
+            @Html.ValidationMessageFor(model => model.Text)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreateDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreateDate)
+            @Html.ValidationMessageFor(model => model.CreateDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsDraft)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDraft)
+            @Html.ValidationMessageFor(model => model.IsDraft)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FlowId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FlowId)
+            @Html.ValidationMessageFor(model => model.FlowId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
